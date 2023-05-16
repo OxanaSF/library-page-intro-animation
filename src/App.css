@@ -40,5 +40,6 @@
 .landing-page-button:hover {
   background-color: white;
   color: #2e302f;
+  
   border: 1px solid #2e302f;
 }
