@@ -1,54 +1,32 @@
-import React, { useState, useEffect } from 'react';
-import { motion, useAnimation } from 'framer-motion';
+import  { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
-import mainImg from './images/library-main.png';
+import HomePage from './components/HomePage/HomePage';
+import LoginForm from './components/LoginForm/LoginForm';
+import SignupForm from './components/SignupForm/SignupForm';
+import BookList from './components/BookList/BookList';
+import BookDetails from './components/BookDetails/BookDetails';
+import ReviewForm from './components/ReviewForm/ReviewForm';
+import UserBooks from './components/UserBooks/UserBooks';
+import UserProfile from './components/UserProfile/UserProfile';
+import SearchBar from './components/SearchBar/SearchBar';
 
 const App = () => {
-  const [showShading, setShowShading] = useState(true);
-  const [showWebsite, setShowWebsite] = useState(false);
-  const shadingControls = useAnimation();
-  const contentControls = useAnimation();
-
-  const handleButtonClick = () => {
-    shadingControls.start({ opacity: 0 }).then(() => {
-        setShowShading(false);
-        setShowWebsite(true);
-        contentControls.start({ opacity: 1 });
-    });
-  };
-
-  useEffect(() => {
-    if (!showShading) {
-      contentControls.start({ opacity: 1 });
-    }
-  }, [showShading, contentControls]);
-
   return (
     <div className="app">
-      {showShading && (
-        <motion.div
-          initial={{ opacity: 1 }}
-          animate={shadingControls}
-          transition={{ duration: 2 }}
-          className="landing-page-image"
-        >
-          <button className="landing-page-button" onClick={handleButtonClick}>
-            Enter Library
-          </button>
-        </motion.div>
-      )}
-
-      {showWebsite && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={contentControls}
-          transition={{ duration: 1 }}
-          className="landing-page-container"
-        >
-          <h1>Welcome to the Library</h1>
-          <p>Explore our collection of books.</p>
-        </motion.div>
-      )}
+      <Router>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/login" element={<LoginForm />} />
+          <Route path="/signup" element={<SignupForm />} />
+          <Route path="/library" element={<BookList />} />
+          <Route path="/books/:bookId" element={<BookDetails />} />
+          <Route path="/books/:bookId/review" element={<ReviewForm />} />
+          <Route path="/user/books" element={<UserBooks />} />
+          <Route path="/user/profile" element={<UserProfile />} />
+          <Route path="/search" element={<SearchBar />} />
+        </Routes>
+      </Router>
     </div>
   );
 };

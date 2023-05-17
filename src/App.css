@@ -1,10 +1,44 @@
-.app {
+/* HOME PAGE */
+.welcome-h1 {
+  font-size: 3rem;
+  color: #2e302f;
+}
+
+.welcome-p {
+  color: #2e302f;
+  font-weight: 600;
+}
+
+.log-sig-btn-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.main-color-btn {
+  background-color: #2e302f;
+  border: none;
+  transition: transform 0.3s ease-in-out;
+}
+
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:visited {
+  transform: scale(1.1);
+  background-color: rgb(250, 235, 215);
+  border: 1px solid #2e302f;
+  color: #2e302f !important;
+}
+
+.home-page {
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #f1f1f1;
+  background-color: rgb(250, 235, 215);
   font-family: 'Montserrat', sans-serif;
+  text-align: center;
 }
 
 .landing-page-image {
@@ -39,7 +73,62 @@
 
 .landing-page-button:hover {
   background-color: white;
+  background-color: transparent;
   color: #2e302f;
-  
   border: 1px solid #2e302f;
+  color: white;
+  border: 1px solid white;
 }
+/* END HOME PAGE */
+
+
+
+/* SIGNUP */
+.form-container {
+  max-width: 600px;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  color: #2e302f;
+}
+
+.main-color-signup-btn {
+  background-color: #2e302f;
+  border: none;
+  transition: transform 0.3s ease-in-out;
+}
+
+.main-color-signup-btn:hover,
+.main-color-signup-btn:active,
+.main-color-signup-btn:visited {
+  transform: scale(1.1);
+  background-color: white !important;
+  border: 1px solid #2e302f;
+  color: #2e302f !important;
+}
+/* END SIGNUP */
+
+
+
+
+/* LOGIN */
+.form-container-login {
+  margin-top: 10rem;
+}
+
+.main-color-login-btn {
+  background-color: #2e302f;
+  border: none;
+  transition: transform 0.3s ease-in-out;
+}
+
+.main-color-login-btn:hover,
+.main-color-login-btn:active,
+.main-color-login-btn:visited {
+  transform: scale(1.1);
+  background-color: white !important;
+  border: 1px solid #2e302f;
+  color: #2e302f !important;
+}
+/* END LOGIN */
